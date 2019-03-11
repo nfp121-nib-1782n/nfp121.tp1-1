@@ -1,5 +1,7 @@
 package question2;
 
+//package question2;
+
 import question1.Circle;
 import question1.Square;
 import question1.Triangle;
@@ -19,8 +21,8 @@ public class Picture {
     private Square wall;
     private Square window;
     private Triangle roof;
-    private Circle sun;
-
+    private Circle sun,sun2;
+    private boolean laTerreEstFixe;
     /**
      * Constructor for objects of class Picture
      */
@@ -50,11 +52,18 @@ public class Picture {
         roof.makeVisible();
 
         sun = new Circle();
-        sun.changeColor("yellow");
+        sun.changeColor("blue");
         sun.moveHorizontal(180);
         sun.moveVertical(-10);
         sun.changeSize(60);
         sun.makeVisible();
+        
+        sun2 = new Circle();
+        sun2.changeColor("yellow");
+        sun2.moveHorizontal(100);
+        sun2.moveVertical(-20) ;
+        sun2.changeSize(60);
+        sun2.makeVisible();
     }
 
     /**
@@ -79,8 +88,15 @@ public class Picture {
             wall.changeColor("red");
             window.changeColor("black");
             roof.changeColor("green");
-            sun.changeColor("yellow");
+            sun.changeColor("blue");
         }
     }
+  public void terreFixeSunset(){
+      //laTerreEstFixe=true;
+      sun.slowMoveVertical(230);
 
 }
+public void terreNonFixeSunset(){
+    //laTerreEstFixe=false;
+   
+}}

@@ -36,7 +36,7 @@ public class AuditeurCNAM {
      * le login au Cnam : 6 premières lettres du nom suivies de la première
      * lettre du prénom séparées de '_' . le login retourné est en minuscules,
      * le trait d'union, ou spéciaux <i>(pour unix)</i> sont remplacés par des
-     * '_' pas de caractères accentués pour le login voir les classes
+     * '_' pas de caractères acce54tués pour le login voir les classes
      * prédéfines, java.lang.String : les méthodes replaceAll, toLowerCase et
      * substring java.lang.Math : la méthode min<br>
      * <b>BlueJ : Menu Aide</b>
@@ -45,7 +45,23 @@ public class AuditeurCNAM {
      *         homonymes...
      */
     public String login() {
-        return "";// à compléter
+        String motModifier="";
+        if(nom.length()>6){
+          motModifier+=nom.substring(0,6);
+          }else{
+              motModifier+=motModifier;
+             }
+           motModifier=motModifier + "_" + prenom.substring(0,1);
+           motModifier=motModifier.replaceAll("é","e");
+           motModifier=motModifier.replaceAll("â","a");
+           motModifier=motModifier.replaceAll("ä","a");
+           motModifier=motModifier.replaceAll("à","a");
+           motModifier=motModifier.replaceAll("ç","c");
+           motModifier=motModifier.replaceAll("ê","e");
+           motModifier=motModifier.replaceAll("ë","e");
+           motModifier=motModifier.replaceAll("è","e");
+           motModifier=motModifier.toLowerCase();
+        return "motModifier";// à compléter
     }
 
     /**
@@ -54,7 +70,8 @@ public class AuditeurCNAM {
      * @return son nom
      */
     public String nom() {
-        return null;// à compléter
+       
+        return this.nom;
     }
 
     /**
@@ -63,16 +80,13 @@ public class AuditeurCNAM {
      * @return son prénom
      */
     public String prenom() {
-        return null;// à compléter
+        
+        return this.prenom;
     }
 
-    /**
-     * Lecture du matricule de l'auditeur.
-     * 
-     * @return son matricule
-     */
     public String matricule() {
-        return null;// à compléter
+       
+       return this.matricule;
     }
 
     /**
