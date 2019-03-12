@@ -92,11 +92,13 @@ public class Picture {
         }
     }
   public void terreFixeSunset(){
-      //laTerreEstFixe=true;
+      if(!laTerreEstFixe){
+      laTerreEstFixe=true;    
       sun.slowMoveVertical(230);
-
-}
-public void terreNonFixeSunset(){
-    //laTerreEstFixe=false;
-   
+     
 }}
+public void terreNonFixeSunset(){
+    if(laTerreEstFixe){
+        laTerreEstFixe=false;
+   sun.slowMoveVertical(-230);
+}}}
